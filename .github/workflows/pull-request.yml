@@ -1,4 +1,4 @@
-name: PR Title Validator
+name: Pull Request
 
 on:
   workflow_call:
@@ -8,7 +8,6 @@ on:
 
 jobs:
   pr-validate:
-    name: Validate PR Title
     runs-on: ubuntu-latest
     steps:
       - name: Validate PR title format
