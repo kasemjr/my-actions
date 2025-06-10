@@ -7,10 +7,10 @@ on:
     branches: [main]
 
 jobs:
-  pr-validate:
+  validate-title:
     runs-on: ubuntu-latest
     steps:
-      - name: Validate PR title format
+      - name: Validate PR Title Format
         id: validate
         run: |
           PR_TITLE="${{ github.event.pull_request.title }}"
@@ -29,7 +29,7 @@ jobs:
             exit 1
           fi
 
-      - name: Confirm valid PR title
+      - name: Confirm valid PR Title
         if: steps.validate.outputs.is_valid == 'true'
         run: |
           echo "✅ PR title matches semantic commit pattern"
